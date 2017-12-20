@@ -6,25 +6,21 @@ using System.Web.Mvc;
 
 namespace DojoMusic.Controllers
 {
-    public class HomeController : Controller
-    {
-        public ActionResult Index()
-        {
-            return View();
-        }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
+	public class HomeController : Controller
 
-            return View();
-        }
+	{
 
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+		private SongsDBEntities _db = new SongsDBEntities(); 
 
-            return View();
-        }
-    }
+		public ActionResult Index()
+
+		{
+
+			return View(SongsDB.ToList());
+
+		}
+
+	}
+
 }
