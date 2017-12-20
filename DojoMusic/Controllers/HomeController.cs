@@ -9,18 +9,20 @@ namespace DojoMusic.Controllers
 
 	public class HomeController : Controller
 
-	{
+    {
 
-		private SongsDBEntities _db = new SongsDBEntities(); 
+        // GET: /Songs
 
-		public ActionResult Index()
+        public ActionResult Index()
 
-		{
+        {
 
-			return View(SongsDB.ToList());
+            var entities = new SongDBEntities();
 
-		}
+            return View(entities.SongSet.ToList());
 
-	}
+        }
+
+    }
 
 }
